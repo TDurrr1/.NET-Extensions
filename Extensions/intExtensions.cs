@@ -1,6 +1,4 @@
-﻿using System.Net.NetworkInformation;
-
-namespace Extensions
+﻿namespace Extensions
 {
     public static class intExtensions
     {

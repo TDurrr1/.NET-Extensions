@@ -4,7 +4,7 @@
     {
         public static bool InRange<T>(this T comparable, T minimum, T maximum, bool minInclusive = true, bool maxInclusive = true) where T : IComparable<T>
         {
-            if (minimum.CompareTo(maximum) > 0) throw new ArgumentException("Minimum is greater than maximum.", nameof(minimum));
+            ArgumentOutOfRangeException.ThrowIfGreaterThan(minimum, maximum);
             if (minimum.Equals(maximum) && minInclusive != maxInclusive) throw new ArgumentException("Half-open degenerate interval specified.");
 
             var minComp = comparable.CompareTo(minimum);
