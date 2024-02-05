@@ -45,7 +45,7 @@ namespace Tests
         [InlineData(2, 1, 1, false, false, false)]
         public void InRange_NoThrows(int value, int minimum, int maximum, bool minInclusive, bool maxInclusive, bool expected)
         {
-            Assert.Equal(value.InRange(minimum, maximum, minInclusive, maxInclusive), expected);
+            Assert.Equal(expected, value.InRange(minimum, maximum, minInclusive, maxInclusive));
         }
 
         [Theory]
