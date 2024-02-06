@@ -10,6 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)IComparableExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IEnumerableOfStringExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)intExtensions.cs" />
   </ItemGroup>
 </Project>
