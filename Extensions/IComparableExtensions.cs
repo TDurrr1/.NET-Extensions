@@ -2,7 +2,7 @@
 {
 	public static class IComparableExtensions
 	{
-		public static bool InRange<T>(this T comparable, T minimum, T maximum, bool minInclusive = true, bool maxInclusive = true) where T : IComparable<T>
+		public static bool IsInRange<T>(this T comparable, T minimum, T maximum, bool minInclusive = true, bool maxInclusive = true) where T : IComparable<T>
 		{
 			ArgumentOutOfRangeException.ThrowIfGreaterThan(minimum, maximum);
 			if (minimum.Equals(maximum) && minInclusive != maxInclusive) throw new ArgumentException("Half-open degenerate interval specified.");

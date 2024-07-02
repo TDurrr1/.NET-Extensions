@@ -52,7 +52,7 @@
 		{
 			if (value == 0) return string.Empty;
 			if (value < 0) return "negative " + AsTextInner(Math.Abs(value), permitHundredsToTenThousand);
-			if (value.InRange(0, zeroToNineteen.Length - 1)) return zeroToNineteen[value];
+			if (value.IsInRange(0, zeroToNineteen.Length - 1)) return zeroToNineteen[value];
 			if (value <= 99) return multiplesOfTen[value / 10] + ("-" + AsTextInner(value % 10, permitHundredsToTenThousand)).TrimEnd('-');
 			if (value <= 999 || (permitHundredsToTenThousand && value <= 9_999 && (value / 100) % 10 != 0)) return AsTextInner(value / 100, permitHundredsToTenThousand) + (" hundred " + AsTextInner(value % 100, permitHundredsToTenThousand)).TrimEnd();
 			if (value <= 999_999) return AsTextInner(value / 1_000, permitHundredsToTenThousand).TrimEnd() + (" thousand " + AsTextInner(value % 1_000, permitHundredsToTenThousand)).TrimEnd();
@@ -66,7 +66,7 @@
 			if (value < 0) return "-" + Math.Abs(value).AsOrdinal();
 
 			var numberStr = value.ToString("N0");
-			if ((value % 100).InRange(11, 13)) return numberStr + "th";
+			if ((value % 100).IsInRange(11, 13)) return numberStr + "th";
 
 			switch (value % 10)
 			{
